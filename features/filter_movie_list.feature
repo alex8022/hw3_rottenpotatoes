@@ -46,7 +46,9 @@ Scenario: no ratings selected
   When I am on the RottenPotatoes home page
   And I check the following ratings: G, PG, PG-13, R, NC-17
   And I press "ratings_submit"
-  Then I should see no movies
+  And I uncheck the following ratings: G, PG, PG-13, R, NC-17
+  And I press "ratings_submit"
+  Then I should see all movies
 
 Scenario: all ratings selected
   When I am on the RottenPotatoes home page
